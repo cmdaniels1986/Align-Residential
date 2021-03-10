@@ -1,0 +1,7 @@
+1. Add BedxBath Column
+2. Load into MySQL Database
+3. Fix Property Names
+4. Split Address into Street, City, State
+5. Answer questions about Term Fields and Units
+
+Get Quickbooks setup

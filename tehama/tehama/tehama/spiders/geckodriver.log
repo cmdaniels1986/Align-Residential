@@ -1,0 +1,58 @@
+1612923437323	geckodriver	INFO	Listening on 127.0.0.1:54288
+1612923440389	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\cmdan\\AppData\\Local\\Temp\\rust_mozprofileG1zZEP"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612923443005	Marionette	INFO	Listening on port 54298
+1612923443065	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612923443088	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://50c6b59d-0a47-410a-a92a-17c80c13b8ef.rlets.com/static/storage.html, line 1: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+1612923476691	Marionette	ERROR	[35] No reply from Marionette:Register
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 567"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:567:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 567, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 567: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+Handler function _httpStopRequest threw an exception: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsITraceableChannel.setNewListener]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://devtools/server/actors/network-monitor/network-observer.js :: _setupResponseListener :: line 1086"  data: no]
+Stack: _setupResponseListener@resource://devtools/server/actors/network-monitor/network-observer.js:1086:38
+_createNetworkEvent@resource://devtools/server/actors/network-monitor/network-observer.js:912:12
+_httpStopRequest@resource://devtools/server/actors/network-monitor/network-observer.js:409:14
+exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:103:22
+Line: 1086, column: 0
+console.error: ({})
+console.error: "Error while calling actor 'pagestyle's method 'getLayout'" "can't access dead object"
+console.error: "getLayout@resource://devtools/server/actors/page-style.js:1010:24\nhandler@resource://devtools/shared/protocol/Actor.js:172:37\nonPacket@resource://devtools/server/devtools-server-connection.js:379:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:68:16\n"
+console.error: (new Error("Protocol error (TypeError): can't access dead object from: server0.conn0.child3/pagestyle26 (resource://devtools/server/actors/page-style.js:1010:24)", "resource://devtools/shared/protocol/Front.js", 361))
+console.error: "Error while calling actor 'domwalker's method 'children'" "can't access dead object"
+console.error: "standardTreeWalkerFilter@resource://devtools/server/actors/inspector/utils.js:132:5\ngetClosestAcceptedSibling@resource://devtools/server/actors/inspector/document-walker.js:187:14\ngetStartingNode@resource://devtools/server/actors/inspector/document-walker.js:176:19\nDocumentWalker@resource://devtools/server/actors/inspector/document-walker.js:79:34\ngetNonAnonymousDocumentWalker@resource://devtools/server/actors/inspector/walker.js:348:12\ngetDocumentWalker@resource://devtools/server/actors/inspector/walker.js:364:19\ngetFilteredWalker@resource://devtools/server/actors/inspector/walker.js:986:19\n_getChildren@resource://devtools/server/actors/inspector/walker.js:1022:47\nchildren@resource://devtools/server/actors/inspector/walker.js:882:47\nhandler@resource://devtools/shared/protocol/Actor.js:172:37\nonPacket@resource://devtools/server/devtools-server-connection.js:379:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:68:16\n"
+console.error: (new Error("Protocol error (TypeError): can't access dead object from: server0.conn0.child3/domwalker25 (resource://devtools/server/actors/inspector/utils.js:132:5)", "resource://devtools/shared/protocol/Front.js", 361))
+console.error: (new TypeError("currentNode is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 66))
+TypeError: currentNode is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:66:20
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:226:34
+emit@resource://devtools/shared/event-emitter.js:172:18
+emit@resource://devtools/shared/event-emitter.js:324:18
+getMutations@resource://devtools/client/fronts/walker.js:358:10
+
+1612923597100	Marionette	INFO	Stopped listening on port 54298
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1612924044515	geckodriver	INFO	Listening on 127.0.0.1:54932
+1612924047592	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\cmdan\\AppData\\Local\\Temp\\rust_mozprofilefJl7uv"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612924049425	Marionette	INFO	Listening on port 54940
+1612924049641	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612924049657	Marionette	ERROR	[15] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: https://50c6b59d-0a47-410a-a92a-17c80c13b8ef.rlets.com/static/storage.html, line 1: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+JavaScript error: https://50c6b59d-0a47-410a-a92a-17c80c13b8ef.rlets.com/static/storage.html, line 1: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+1612924186775	Marionette	ERROR	[35] No reply from Marionette:Register
+1612924213357	Marionette	ERROR	[36] No reply from Marionette:Register
+1612924227585	Marionette	ERROR	[38] No reply from Marionette:Register
+1612924288288	Marionette	ERROR	[40] No reply from Marionette:Register
+1612924368009	Marionette	ERROR	[41] No reply from Marionette:Register
+1612924500457	Marionette	INFO	Stopped listening on port 54940
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
