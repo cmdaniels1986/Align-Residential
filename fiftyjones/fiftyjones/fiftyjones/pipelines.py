@@ -38,5 +38,10 @@ class FiftyjonesPipeline:
         # terms = scrapy.Field()  
         # units = scrapy.Field()  
         # offer = scrapy.Field()  
+        item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
+        
+        item['address'] = '50 Jones Street'
+        item['city'] = 'San Francisco'
+        item['state'] = 'CA'
 
         return item

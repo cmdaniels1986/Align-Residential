@@ -13,6 +13,8 @@ class FiftyjonesItem(scrapy.Item):
     url = scrapy.Field()      
     property = scrapy.Field()  
     address = scrapy.Field()
+    city = scrapy.Field()
+    state = scrapy.Field()
     availability = scrapy.Field()  
     bedbath_raw = scrapy.Field()  
     beds = scrapy.Field()  

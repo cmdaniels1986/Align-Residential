@@ -86,3 +86,23 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+FEED_EXPORT_FIELDS=['datecrawled', 
+                    'property', 
+                    'unit_id', 
+                    'availability', 
+                    'beds', 
+                    'baths', 
+                    'bedsxbaths',                    
+                    'size', 
+                    'monthly_price', 
+                    'price_min', 
+                    'price_max', 
+                    'offer', 
+                    'occupancy',
+                    'pets', 
+                    'address', 
+                    'city',
+                    'state',
+                    'domain', 
+                    'url',
+                    'bedbath_raw']

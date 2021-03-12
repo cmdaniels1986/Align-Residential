@@ -40,4 +40,8 @@ class RisePipeline:
         # terms = scrapy.Field()  
         # units = scrapy.Field()  
         # offer = scrapy.Field() 
+        item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
+        item['address'] = '1699 Market Street'
+        item['city'] = 'San Francisco'
+        item['state'] = 'CA'
         return item

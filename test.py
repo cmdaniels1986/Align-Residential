@@ -1,6 +1,8 @@
-prices = 'Studio, 1 Bath Apartment #204 at Fifteen Fifty'
+address = ''Mission Fifteen Fifty: Jr. 1 Bedroom, 1 Bath'
 
-start =prices.find('#')
-finish = prices.find(' at ')
-
-print(prices[start:finish].replace('#','').strip())
+street = address[0:address.find('  ')].strip()
+city = address.replace(street,'').strip()
+city = city[0:city.find(',')].strip()
+state = address[address.find(',')+1:address.rfind(' ')].strip()
+# state = address.rfind(' ')
+print(state)

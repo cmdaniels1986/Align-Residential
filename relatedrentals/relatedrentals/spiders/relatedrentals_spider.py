@@ -12,15 +12,20 @@ class RelatedrentalsSpiderSpider(scrapy.Spider):
     #start_urls = ['https://www.relatedrentals.com/search?city=51&property=47200726']
 
     def parse(self, response):
-        units = response.xpath("//*[@class='views-row']")
+        units = response.xpath("//div[@class='views-row']")
 
         for unit in units:
             unit_id = unit.xpath('.//article/@data-api-id').extract_first()
             datecrawled = datetime.now()
             domain = RelatedrentalsSpiderSpider.allowed_domains
-            url = response.urljoin(unit.xpath('.//article/@about').extract_first())     
-            property = unit.xpath('.//article/@data-category').extract_first()
-
+            url = response.urljoin(unit.xpath('.//article/@about').extract_first())
+            try:
+                property = unit.xpath('.//article/@data-category').extract_first()     
+                property = property + ' ' + unit.xpath('.//article/@data-gtm-name').extract_first() 
+            except: property = ''
+            # property = unit.xpath('.//article/div/a/div[@class="fg-unit-related__content"]/div/div/span[@class="property-neighborhood"]/text()').extract_first()    
+            # property = property.strip()
+            # property = property + ' ' + unit.xpath('.//article/div/a/div[@class="fg-unit-related__content"]/div/div[@class="fg-unit-related__content-header"]/text()').extract()[1]
             availability = unit.xpath('.//article/@data-dimension9').extract_first()
             bedbath_raw = unit.xpath('.//article/@data-gtm-name').extract_first()
 

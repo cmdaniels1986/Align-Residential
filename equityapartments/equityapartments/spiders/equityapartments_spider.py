@@ -32,9 +32,9 @@ class EquityapartmentsSpiderSpider(scrapy.Spider):
         units = sel.xpath('//div[@class="col-xs-12 unit-expanded-card ng-scope"]/div[@class="row"]')
         property = sel.xpath('//h1[@itemprop="name"]/text()').extract_first()
         address = sel.xpath('//span[@itemprop="streetAddress"]/text()').extract_first()
-        address = address + ' ' + sel.xpath('//span[@itemprop="addressLocality"]/text()').extract_first()
-        address = address + ' ' + sel.xpath('//span[@itemprop="addressRegion"]/text()').extract_first()
-        address = address + ', ' + sel.xpath('//span[@itemprop="postalCode"]/text()').extract_first()
+        city = sel.xpath('//span[@itemprop="addressLocality"]/text()').extract_first()
+        state = sel.xpath('//span[@itemprop="addressRegion"]/text()').extract_first()
+        # address = address + ', ' + sel.xpath('//span[@itemprop="postalCode"]/text()').extract_first()
         for unit in units:
 
             item = EquityapartmentsItem()
@@ -67,6 +67,8 @@ class EquityapartmentsSpiderSpider(scrapy.Spider):
             item['monthly_price'] = monthly_price
             item['property'] = property
             item['address'] = address
+            item['city'] = city
+            item['state'] = state
             item['pets'] = 'Pet Friendly'
             item['offer'] = offer
             

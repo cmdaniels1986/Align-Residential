@@ -40,5 +40,5 @@ class TehamaPipeline:
         # terms = scrapy.Field()  
         # units = scrapy.Field()  
         # offer = scrapy.Field() 
-
+        item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
         return item

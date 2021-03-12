@@ -39,4 +39,9 @@ class VannessPipeline:
         # terms = scrapy.Field()  
         # units = scrapy.Field()  
         # offer = scrapy.Field()  
+        item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
+        item['address'] = '150 Van Ness Avenue'
+        item['city'] = 'San Francisco'
+        item['state'] = 'CA'
+        
         return item

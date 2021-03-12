@@ -19,7 +19,8 @@ class RiseSpiderSpider(scrapy.Spider):
 
         for unit in units:
             url = response.urljoin(unit.xpath('.//@href').extract_first())
-            property = unit.xpath('.//@data-floorplan-name').extract_first()
+            #property = unit.xpath('.//@data-floorplan-name').extract_first()
+            property = 'The Rise'
             address = response.xpath('//div[@data-selenium-id="address_street"]/text()').extract_first().strip()
             address = address + ' ' + response.xpath('//*[@data-selenium-id="address_city"]/text()').extract_first() 
             address = address + ', ' + response.xpath('//*[@data-selenium-id="address_state"]/text()').extract_first()

@@ -29,7 +29,7 @@ class RelatedrentalsPipeline:
         # property = scrapy.Field()  
         # address = scrapy.Field()
         # availability = scrapy.Field()  
-        bedbath_raw1 = item['bedbath_raw'].replace('Studio', '0 bed').replace('Jr. ', '').replace('Corner ', '').replace(',','')
+        bedbath_raw1 = item['bedbath_raw'].replace('Alcove Studio', '0 bed').replace('Studio', '0 bed').replace('Jr. ', '').replace('Corner ', '').replace(',','')
         bedbath_raw2 = bedbath_raw1.split(' ')
         item['beds'] = bedbath_raw2[0]
         item['baths'] = bedbath_raw2[2]
@@ -45,5 +45,14 @@ class RelatedrentalsPipeline:
         # pets = scrapy.Field()  
         # terms = scrapy.Field()  
         # units = scrapy.Field()  
-        # offer = scrapy.Field()  
+        # offer = scrapy.Field() 
+        item['bedsxbaths'] = item['beds'] + 'x' + item['baths'] 
+        address = item['address']
+        item['address'] = address[0:address.find('  ')].strip()
+        city = address.replace(item['address'],'').strip()
+        item['city'] = city[0:city.find(',')].strip()
+        item['state'] = address[address.find(',')+1:address.rfind(' ')].strip()
+        property = item['property'].split(':')
+        item['property'] = property[0].strip()
+
         return item

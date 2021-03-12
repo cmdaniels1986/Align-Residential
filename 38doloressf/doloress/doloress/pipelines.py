@@ -28,4 +28,10 @@ class DoloressPipeline:
         if availability == 'Available Now':
             item['availability'] = date.today()
 
+        item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
+
+        item['address'] = '38 Dolores St'
+        item['city'] = 'San Francisco'
+        item['state'] = 'CA'
+        
         return item

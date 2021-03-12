@@ -66,8 +66,9 @@ class TehamaSpiderSpider(scrapy.Spider):
                     item['terms'] = textlist1[1]
                     item['availability'] = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[2]
                     item['property'] = '33 Tehama'
-                    item['address'] = '33 Tehama St, San Francisco, CA 94105'
-
+                    item['address'] = '33 Tehama St'
+                    item['address'] = 'San Francisco'
+                    item['address'] = 'CA'
                     item['datecrawled'] = datetime.now()
                     item['domain']  = TehamaSpiderSpider.allowed_domains
                     item['url'] = response.request.url

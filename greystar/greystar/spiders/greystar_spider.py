@@ -41,9 +41,9 @@ class GreystarSpiderSpider(scrapy.Spider):
 
         property = sel.xpath('//h1[@itemprop="name"]/text()').extract_first()
         address = sel.xpath('//span[@itemprop="streetAddress"]/text()').extract_first()
-        address = address + ' ' + sel.xpath('//span[@itemprop="addressLocality"]/text()').extract_first()
-        address = address + ' ' + sel.xpath('//span[@itemprop="addressRegion"]/text()').extract_first()
-        address = address + ', ' + sel.xpath('//span[@itemprop="postalCode"]/text()').extract_first()
+        city = sel.xpath('//span[@itemprop="addressLocality"]/text()').extract_first()
+        state = sel.xpath('//span[@itemprop="addressRegion"]/text()').extract_first()
+        #address = address + ', ' + sel.xpath('//span[@itemprop="postalCode"]/text()').extract_first()
         floorplans = sel.xpath('//a[@aria-label="View Available"]')
 
         for floorplan in floorplans:            
