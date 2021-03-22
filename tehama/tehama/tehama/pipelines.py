@@ -41,4 +41,7 @@ class TehamaPipeline:
         # units = scrapy.Field()  
         # offer = scrapy.Field() 
         item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
+        item['address'] = '33 Tehama St'
+        item['city'] = 'San Francisco'
+        item['state'] = 'CA'
         return item

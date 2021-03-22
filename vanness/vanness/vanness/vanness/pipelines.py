@@ -13,10 +13,13 @@ class VannessPipeline:
     def process_item(self, item, spider):
 
         availability = item['availability']
-        if availability == 'Available Now':
+        if availability == 'Available Now' or availability == 'Available Now ':
             item['availability'] = datetime.date.today()
         else:
-            item['availability'] = datetime.datetime.strptime(item['availability'], '%B %d, %Y')
+            try:
+                item['availability'] = datetime.datetime.strptime(item['availability'], '%B %d, %Y')
+            except:
+                item['availability'] = datetime.datetime.strptime(item['availability'], '%B %d, %Y ')
         item['unit_id'] = item['unit_id'].replace('#','').replace(' - ','-')
         # datecrawled = scrapy.Field()  
         # domain = scrapy.Field()  

@@ -8,10 +8,9 @@
 from itemadapter import ItemAdapter
 from equityapartments.items import EquityapartmentsItem
 
-
 class EquityapartmentsPipeline:
-    def process_item(self, item, spider):
 
+    def process_item(self, item, spider):        
         # unit_id = scrapy.Field()  
         # datecrawled = scrapy.Field()  
         # domain = scrapy.Field()  
@@ -34,4 +33,5 @@ class EquityapartmentsPipeline:
         # units = scrapy.Field()  
         # offer = scrapy.Field()  
         item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
+
         return item
