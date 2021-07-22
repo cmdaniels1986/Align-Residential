@@ -52,11 +52,16 @@ class EquityapartmentsSpiderSpider(scrapy.Spider):
                 offer = ''
             # # Finding nth occurrence of substring 
             val = -1
-            for i in range(0, 9): 
-                val = ini_str.find('/', val + 1) 
-            unit_id = ini_str[val + 1:val+4]
+            # for i in range(0, 9): 
+            #     val = ini_str.find('/', val + 1) 
+            # unit_id = ini_str[val + 1:val+4]
             # unit_id = unit_id.replace('/guestcard/b4213/tour#/booktourunit/newtour/0/1/N/','')
             # unit_id = unit_id[0:unit_id.find('/')]
+            # Start Getting Unit ID
+            start = ini_str.find('ApartmentID=')
+            end = ini_str.find('Term=')
+            unit_id = ini_str[start+12:end-1]
+
             item['unit_id'] = unit_id
             item['datecrawled'] = datetime.now()
             item['domain'] = EquityapartmentsSpiderSpider.allowed_domains

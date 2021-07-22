@@ -26,8 +26,8 @@ class TehamaSpiderSpider(scrapy.Spider):
         driver.get('https://www.apartments.com/33-tehama-san-francisco-ca/eqzek7p/')
         time.sleep(5)
         sel = Selector(text=driver.page_source) 
-        offer = sel.xpath('//div[@class="moveInSpecialsContainer"]/p/text()').extract_first()
-        
+        # offer = sel.xpath('//div[@class="moveInSpecialsContainer"]/p/text()').extract_first()
+        offer = ""
         driver.get(response.request.url)
         time.sleep(5)
 
@@ -60,18 +60,22 @@ class TehamaSpiderSpider(scrapy.Spider):
                     textlist = text.split(' / ')
                     item['bedbath_raw'] = textlist[0] + ' ' + textlist[1]
                     item['size'] = textlist[2]
-                    text1 = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[1]
-                    textlist1 = text1.split(' / ')
-                    item['monthly_price'] = textlist1[0]
-                    item['terms'] = textlist1[1]
-                    item['availability'] = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[2]
-                    item['property'] = '33 Tehama'
-                    item['address'] = '33 Tehama St'
-                    item['address'] = 'San Francisco'
-                    item['address'] = 'CA'
-                    item['datecrawled'] = datetime.now()
-                    item['domain']  = TehamaSpiderSpider.allowed_domains
-                    item['url'] = response.request.url
+                    try:
+                        text1 = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[1]
+                        textlist1 = text1.split(' / ')
+                        item['monthly_price'] = textlist1[0]
+                        item['terms'] = textlist1[1]
+                        item['availability'] = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[2]
+                        item['property'] = '33 Tehama'
+                        item['address'] = '33 Tehama St'
+                        item['address'] = 'San Francisco'
+                        item['address'] = 'CA'
+                        item['datecrawled'] = datetime.now()
+                        item['domain']  = TehamaSpiderSpider.allowed_domains
+                        item['url'] = response.request.url
+                    except:
+                        text1 = ""
+                    
                     
                     yield item 
         driver.quit

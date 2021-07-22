@@ -22,6 +22,10 @@ class VannessSpiderSpider(scrapy.Spider):
         driver.get(response.request.url)
         time.sleep(5)
 
+        button = driver.find_element_by_xpath("//button[@class='banner-button']")
+        button.click()
+        time.sleep(5)
+
         sel = Selector(text=driver.page_source) 
 
         item = VannessItem()        

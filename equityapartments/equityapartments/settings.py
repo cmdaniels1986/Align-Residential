@@ -107,3 +107,7 @@ FEED_EXPORT_FIELDS=['datecrawled',
                     'domain', 
                     'url',
                     'bedbath_raw']
+
+# FEED_EXPORTERS = {
+#     'headless': 'equityapartments_spider.exporters.HeadlessCsvItemExporter',
+# }
