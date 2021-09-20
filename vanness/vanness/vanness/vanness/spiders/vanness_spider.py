@@ -26,6 +26,11 @@ class VannessSpiderSpider(scrapy.Spider):
         button.click()
         time.sleep(5)
 
+        driver.switch_to.frame(driver.find_element_by_tag_name("iframe"))
+        button = driver.find_element_by_xpath("//button[@class='primary small ng-binding']")
+        button.click()
+
+        driver.switch_to.default_content()
         sel = Selector(text=driver.page_source) 
 
         item = VannessItem()        
@@ -37,16 +42,16 @@ class VannessSpiderSpider(scrapy.Spider):
         time.sleep(5)        
 
         #click first button 
-        driver.execute_script("window.scrollTo(0, 500)")
-        python_button = driver.find_element_by_xpath('//button[@class="primary small ng-binding"]')
-        python_button.click()
+        # driver.execute_script("window.scrollTo(0, 500)")
+        # python_button = driver.find_element_by_xpath('//button[@class="primary small ng-binding"]')
+        # python_button.click()
 
-        time.sleep(2)
+        # time.sleep(2)
  
-        python_button = driver.find_element_by_xpath('//a[@tab-index-loaded="true"]')
-        python_button.click()
+        # python_button = driver.find_element_by_xpath('//a[@tab-index-loaded="true"]')
+        # python_button.click()
 
-        time.sleep(2)
+        # time.sleep(2)
 
         #Start scraping Iframe        
 
