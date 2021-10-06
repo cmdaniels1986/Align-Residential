@@ -19,10 +19,10 @@ class RelatedrentalsPipeline:
             item['availability'] = datetime.datetime.strptime(item['availability'] + '/' + str(datetime.date.today().year), '%m/%d/%Y')
 
         unit_id = item['unit_id']
-        start =unit_id.find('#')
-        finish = unit_id.find(' at ')
+        # start =unit_id.find('#')
+        # finish = unit_id.find(' at ')
         
-        item['unit_id'] = unit_id[start:finish].replace('#','').strip() 
+        # item['unit_id'] = unit_id[start:finish].replace('#','').strip() 
         # datecrawled = scrapy.Field()  
         # domain = scrapy.Field()  
         # url = scrapy.Field()      

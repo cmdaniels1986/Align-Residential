@@ -25,7 +25,7 @@ class FiftyjonesSpiderSpider(scrapy.Spider):
 
         sel = Selector(text=driver.page_source) 
 
-        offer = sel.xpath('//div[@class="usnb-message"]/div/text()').extract_first().strip()
+        # offer = sel.xpath('//div[@class="usnb-message"]/div/text()').extract_first().strip()
         property = sel.xpath('//div[@class="footer-contact-body"]/strong/text()').extract_first()
         address = sel.xpath('//span[@itemprop="streetAddress"]/text()').extract_first().strip()
         address = address + ' ' + sel.xpath('//span[@itemprop="addressLocality"]/text()').extract_first().strip()
@@ -52,7 +52,7 @@ class FiftyjonesSpiderSpider(scrapy.Spider):
             item['bedbath_raw'] = unit.xpath('.//td/text()').extract_first()
             item['size'] = unit.xpath('.//td/text()').extract()[1]
             item['monthly_price'] = unit.xpath('.//td/text()').extract()[2]
-            item['offer'] = offer
+            # item['offer'] = offer
             item['property'] = property
             item['address'] = address
             try: 

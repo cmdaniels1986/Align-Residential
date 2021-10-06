@@ -12,7 +12,6 @@ import datetime
 class TehamaPipeline:
     def process_item(self, item, spider):
         
-
         availability = item['availability']
         if availability == 'Available Now':
             item['availability'] = datetime.date.today()

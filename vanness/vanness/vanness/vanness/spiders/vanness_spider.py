@@ -59,7 +59,7 @@ class VannessSpiderSpider(scrapy.Spider):
         for i in range(0, len(expand)-1): 
             while False:
                 try:           
-                    ActionChains(driver).move_to_element(expand[i]).perform()
+                    # ActionChains(driver).move_to_element(expand[i]).perform()
                     driver.execute_script("return arguments[0].scrollIntoView();", expand[i])
                     driver.execute_script("window.scrollBy(0, -250);")
                     break

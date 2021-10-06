@@ -64,8 +64,11 @@ class TehamaSpiderSpider(scrapy.Spider):
                         text1 = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[1]
                         textlist1 = text1.split(' / ')
                         item['monthly_price'] = textlist1[0]
-                        item['terms'] = textlist1[1]
-                        item['availability'] = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[2]
+                        # item['terms'] = textlist1[1]
+                        try:
+                            item['availability'] = unit.xpath('.//a/span[@class="line secondary-font css-12qnlfx-UnitList"]/text()').extract()[2]
+                        except:
+                            item['availability'] = ""
                         item['property'] = '33 Tehama'
                         item['address'] = '33 Tehama St'
                         item['address'] = 'San Francisco'
@@ -75,7 +78,6 @@ class TehamaSpiderSpider(scrapy.Spider):
                         item['url'] = response.request.url
                     except:
                         text1 = ""
-                    
                     
                     yield item 
         driver.quit
