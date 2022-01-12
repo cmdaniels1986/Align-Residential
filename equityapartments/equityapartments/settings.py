@@ -89,6 +89,7 @@ ITEM_PIPELINES = {
 
 FEED_EXPORT_FIELDS=['datecrawled', 
                     'property', 
+                    'uniqueidentifier',
                     'unit_id', 
                     'availability', 
                     'beds', 
@@ -96,17 +97,17 @@ FEED_EXPORT_FIELDS=['datecrawled',
                     'bedsxbaths',                    
                     'size', 
                     'monthly_price', 
-                    'price_min', 
-                    'price_max', 
+                    # 'price_min', 
+                    # 'price_max', 
                     'offer', 
-                    'occupancy',
-                    'pets', 
-                    'address',                     
+                    # 'occupancy',
+                    # 'pets', 
+                    # 'address', 
                     'city',
                     'state',
-                    'domain', 
-                    'url',
-                    'bedbath_raw']
+                    'domain'] 
+                    # 'url',
+                    # 'bedbath_raw'
 
 # FEED_EXPORTERS = {
 #     'headless': 'equityapartments_spider.exporters.HeadlessCsvItemExporter',

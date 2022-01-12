@@ -47,4 +47,5 @@ class VannessPipeline:
         item['city'] = 'San Francisco'
         item['state'] = 'CA'
         
+        item['uniqueidentifier'] = item['property'] + '_' +item['unit_id']
         return item

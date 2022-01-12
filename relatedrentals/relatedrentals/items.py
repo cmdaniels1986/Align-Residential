@@ -30,3 +30,4 @@ class RelatedrentalsItem(scrapy.Item):
     units = scrapy.Field()  
     offer = scrapy.Field()  
     bedsxbaths = scrapy.Field()
+    uniqueidentifier = scrapy.Field()

@@ -34,4 +34,5 @@ class EquityapartmentsPipeline:
         # offer = scrapy.Field()  
         item['bedsxbaths'] = item['beds'] + 'x' + item['baths']
 
+        item['uniqueidentifier'] = item['property'] + '_' +item['unit_id']
         return item

@@ -28,6 +28,13 @@ class VaraPipeline:
         bedbath_raw = item['bedbath_raw'].replace('Studio', 'Bed 0 Baths 1').split(' ')
         item['beds'] = bedbath_raw[1]
         item['baths'] = bedbath_raw[3]
+
+        #Handling Studio Change
+        if item['beds'] == 'Bed':
+            item['beds'] = '0'
+            item['baths'] = '1'
+
+
         # beds = scrapy.Field() 
         # baths = scrapy.Field() 
         # features_raw = scrapy.Field()  
@@ -47,4 +54,5 @@ class VaraPipeline:
         item['city'] = 'San Francisco'
         item['state'] = 'CA'
 
+        item['uniqueidentifier'] = item['property'] + '_' +item['unit_id']
         return item

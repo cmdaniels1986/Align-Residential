@@ -18,7 +18,7 @@ class RelatedrentalsPipeline:
         else:
             item['availability'] = datetime.datetime.strptime(item['availability'] + '/' + str(datetime.date.today().year), '%m/%d/%Y')
 
-        unit_id = item['unit_id']
+        # unit_id = item['unit_id']
         # start =unit_id.find('#')
         # finish = unit_id.find(' at ')
         
@@ -55,4 +55,5 @@ class RelatedrentalsPipeline:
         property = item['property'].split(':')
         item['property'] = property[0].strip()
 
+        item['uniqueidentifier'] = item['property'] + '_' +item['unit_id']
         return item

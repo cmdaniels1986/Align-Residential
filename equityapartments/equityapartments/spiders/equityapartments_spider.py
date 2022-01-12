@@ -29,7 +29,7 @@ class EquityapartmentsSpiderSpider(scrapy.Spider):
 
         sel = Selector(text=driver.page_source)        
 
-        units = sel.xpath('//div[@class="col-xs-12 unit-expanded-card ng-scope"]/div[@class="row"]')
+        units = sel.xpath('//div[@class="col-xs-12 unit-expanded-card"]/div[@class="row"]')
         property = sel.xpath('//h1[@itemprop="name"]/text()').extract_first()
         address = sel.xpath('//span[@itemprop="streetAddress"]/text()').extract_first()
         city = sel.xpath('//span[@itemprop="addressLocality"]/text()').extract_first()

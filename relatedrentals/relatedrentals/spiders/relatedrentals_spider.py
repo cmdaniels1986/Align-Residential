@@ -16,6 +16,7 @@ class RelatedrentalsSpiderSpider(scrapy.Spider):
 
         for unit in units:
             unit_id = unit.xpath('.//article/@data-api-id').extract_first()
+            # item['unit_id'] = unit_id
             datecrawled = datetime.now()
             domain = RelatedrentalsSpiderSpider.allowed_domains
             url = response.urljoin(unit.xpath('.//article/@about').extract_first())
@@ -50,7 +51,7 @@ class RelatedrentalsSpiderSpider(scrapy.Spider):
             yield scrapy.Request(absolute_next_page_url)
 
     def parse_unit(self, response):
-        unit_id = response.xpath('//meta[@name="title"]/@content').extract_first() 
+        # unit_id = response.xpath('//meta[@name="title"]/@content').extract_first() 
         datecrawled = response.meta['datecrawled']
         domain = response.meta['domain']
         url = response.meta['url']
@@ -72,7 +73,7 @@ class RelatedrentalsSpiderSpider(scrapy.Spider):
 
         item = RelatedrentalsItem()
 
-        item['unit_id'] = unit_id
+        item['unit_id'] = response.meta['unit_id']
         item['datecrawled'] = datecrawled
         item['domain'] = domain
         item['url'] = url

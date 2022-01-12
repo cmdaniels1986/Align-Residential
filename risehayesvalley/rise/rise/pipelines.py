@@ -31,7 +31,7 @@ class RisePipeline:
         # beds = scrapy.Field() 
         # baths = scrapy.Field() 
         # features_raw = scrapy.Field()  
-        item['size']  = item['size'].replace('Upto ','').replace(' sqft', '')
+        item['size']  = item['size'].replace('Upto ','').replace(' sqft', '').replace('Sq.Ft.','')
         item['monthly_price'] = item['monthly_price'].replace('Starting at : ','').replace('$','').replace(',','')
         # price_min = scrapy.Field()  
         # price_max = scrapy.Field()           
@@ -44,4 +44,6 @@ class RisePipeline:
         item['address'] = '1699 Market Street'
         item['city'] = 'San Francisco'
         item['state'] = 'CA'
+
+        item['uniqueidentifier'] = item['property'] + '_' +item['unit_id']
         return item

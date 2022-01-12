@@ -43,4 +43,6 @@ class TehamaPipeline:
         item['address'] = '33 Tehama St'
         item['city'] = 'San Francisco'
         item['state'] = 'CA'
+
+        item['uniqueidentifier'] = item['property'] + '_' +item['unit_id']
         return item

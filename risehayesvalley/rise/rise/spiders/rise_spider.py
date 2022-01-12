@@ -66,7 +66,8 @@ class RiseSpiderSpider(scrapy.Spider):
         units = response.xpath('//div[@id="availApts"]/div')
         for unit in units:
             item['unit_id'] = unit.xpath('.//div/div/div/p/span/text()').extract_first()
-            item['availability'] = unit.xpath('.//div/div/p[@class="card-subtitle mb-2 text-muted"]/text()').extract_first()
+            item['availability'] = 'Available Now'
+            # item['availability'] = unit.xpath('.//div/div/p[@class="card-subtitle mb-2 text-muted"]/text()').extract_first()
             item['monthly_price'] = unit.xpath('.//div/div/p[@class="card-subtitle mb-2 text-muted"]/span/text()').extract_first() 
             item['terms'] = 'Deposit: ' + response.xpath('//div/div/p/span/text()').extract()[1]
             
