@@ -13,8 +13,8 @@ from datetime import datetime
 class TehamaSpiderSpider(scrapy.Spider):
     name = 'tehama_spider'
     allowed_domains = ['33tehama.com']
-    start_urls = ['https://sightmap.com/embed/4yjp2k1xpxl']
-    #start_urls = ['https://33tehama.com/availability/']
+    # start_urls = ['https://sightmap.com/embed/4yjp2k1xpxl']
+    start_urls = ['https://sightmap.com/embed/ryzvg8k1pln']
     def parse(self, response):
         #Use Selenium to get the lazy loading banner
         chrome_options = Options()
