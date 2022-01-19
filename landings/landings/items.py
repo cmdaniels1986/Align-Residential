@@ -7,6 +7,27 @@ import scrapy
 
 
 class LandingsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    unit_id = scrapy.Field()  
+    datecrawled = scrapy.Field()  
+    domain = scrapy.Field()  
+    url = scrapy.Field()      
+    property = scrapy.Field()  
+    address = scrapy.Field()
+    availability = scrapy.Field()
+    city = scrapy.Field()
+    state = scrapy.Field()  
+    bedbath_raw = scrapy.Field()  
+    beds = scrapy.Field() 
+    baths = scrapy.Field() 
+    features_raw = scrapy.Field()  
+    size = scrapy.Field()  
+    monthly_price = scrapy.Field()  
+    price_min = scrapy.Field()  
+    price_max = scrapy.Field()           
+    occupancy = scrapy.Field()  
+    pets = scrapy.Field()  
+    terms = scrapy.Field()  
+    units = scrapy.Field()  
+    offer = scrapy.Field()  
+    bedsxbaths = scrapy.Field()
+    uniqueidentifier = scrapy.Field()
