@@ -18,7 +18,7 @@ class VannessSpiderSpider(scrapy.Spider):
         #Use Selenium to get the lazy loading banner
         chrome_options = Options()
         # chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(r'C:\Users\cmdan\Desktop\Spiders\chromedriver.exe', options=chrome_options)
+        driver = webdriver.Chrome(r'C:\Users\cmdan\OneDrive\Desktop\Spiders\chromedriver.exe')
         driver.get(response.request.url)
         time.sleep(5)
 

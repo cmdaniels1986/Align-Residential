@@ -17,7 +17,7 @@ class RentchorusSpiderSpider(scrapy.Spider):
         chrome_options = Options()
         # chrome_options.add_argument("--headless")
         # driver = webdriver.Firefox(executable_path=r"C:\Users\cmdan\Desktop\Spiders\geckodriver.exe")
-        driver = webdriver.Chrome(r'C:\Users\cmdan\Desktop\Spiders\chromedriver.exe', options=chrome_options)
+        driver = webdriver.Chrome(r'C:\Users\cmdan\OneDrive\Desktop\Spiders\chromedriver.exe')
         
         offer = ""
         driver.get(response.request.url)

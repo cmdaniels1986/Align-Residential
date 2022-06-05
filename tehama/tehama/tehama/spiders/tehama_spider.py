@@ -20,7 +20,7 @@ class TehamaSpiderSpider(scrapy.Spider):
         chrome_options = Options()
         # chrome_options.add_argument("--headless")
         # driver = webdriver.Firefox(executable_path=r"C:\Users\cmdan\Desktop\Spiders\geckodriver.exe")
-        driver = webdriver.Chrome(r'C:\Users\cmdan\Desktop\Spiders\chromedriver.exe', options=chrome_options)
+        driver = webdriver.Chrome(r'C:\Users\cmdan\OneDrive\Desktop\Spiders\chromedriver.exe')
 
         #First Find Special on Apartments.com
         driver.get('https://www.apartments.com/33-tehama-san-francisco-ca/eqzek7p/')
